@@ -50,7 +50,7 @@ Deployment instructions
 
 - belongs_to :user
 - belongs_to :item
-- belongs_to :buy
+- has_one :buy
 
 ## buy テーブル
 
@@ -66,4 +66,4 @@ Deployment instructions
 
 ### Association
 
-- has_one :management
+- belongs_to :management
