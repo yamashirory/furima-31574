@@ -16,7 +16,7 @@
 ### Association
 
 - has_many :items
-- has_many :management
+- has_many :managements
 
 ## items テーブル
 
@@ -34,33 +34,36 @@
 
 ### Association
 
+ How to run the test suite
 - belongs_to :user
-- has_one :buy
 - has_one :management
 
-## management テーブル
+## managements テーブル
 
+Deployment instructions
 | Column         | Type       | Options           |
 | -------------- | ---------- | ----------------- |
 | item           | references | foreign_key: true |
+| user           | references | foreign_key: true |
 
 ### Association
 
 - belongs_to :user
 - belongs_to :item
+- belongs_to :buy
 
 ## buy テーブル
 
 | Column          | Type       | Options     |
 | --------------- | ---------- | ----------- |
-| item            | references |             |
-| area_number     | integer    | null: false |
-| prefectures     | text       | null: false |
-| city            | text       | null: false |
-| address         | text       | null: false |
-| building        | text       |             |
-| phone_number    | integer    | null: false |
+| management      | references |             |
+| area_number     | string     | null: false |
+| area_id         | integer    | null: false |
+| city            | string     | null: false |
+| address         | string     | null: false |
+| building        | string     |             |
+| phone_number    | string     | null: false |
 
 ### Association
 
-- belongs_to :item
+- has_one :management
