@@ -2,16 +2,16 @@
 
 ## users テーブル
 
-| Column     | Type   | Options                   |
-| ---------- | ------ | ------------------------- |
-| email      | string | null: false               |
-| password   | string | null: false, unique: true |
-| nickname   | string | null: false               |
-| name_ue    | string | null: false               |
-| name_shita | string | null: false               |
-| kana_ue    | string | null: false               |
-| kana_shita | string | null: false               |
-| birthday   | date   | null: false               |
+| Column               | Type   | Options                   |
+| -------------------- | ------ | ------------------------- |
+| email                | string | null: false, unique: true |
+| encrypted_password   | string | null: false               |
+| nickname             | string | null: false               |
+| name_ue              | string | null: false               |
+| name_shita           | string | null: false               |
+| kana_ue              | string | null: false               |
+| kana_shita           | string | null: false               |
+| birthday             | date   | null: false               |
 
 ### Association
 
@@ -54,15 +54,15 @@ Deployment instructions
 
 ## buy テーブル
 
-| Column          | Type       | Options     |
-| --------------- | ---------- | ----------- |
-| management      | references |             |
-| area_number     | string     | null: false |
-| area_id         | integer    | null: false |
-| city            | string     | null: false |
-| address         | string     | null: false |
-| building        | string     |             |
-| phone_number    | string     | null: false |
+| Column          | Type       | Options           |
+| --------------- | ---------- | ----------------- |
+| management      | references | foreign_key: true |
+| area_number     | string     | null: false       |
+| area_id         | integer    | null: false       |
+| city            | string     | null: false       |
+| address         | string     | null: false       |
+| building        | string     |                   |
+| phone_number    | string     | null: false       |
 
 ### Association
 
