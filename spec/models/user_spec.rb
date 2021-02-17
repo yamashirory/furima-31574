@@ -106,7 +106,6 @@ RSpec.describe User, type: :model do
     it 'birthdayの入力は必須である' do
       @user.birthday = ''
       @user.valid?
-      binding.pry
       expect(@user.errors.full_messages).to include("Birthday can't be blank")
     end
   end
