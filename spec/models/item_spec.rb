@@ -28,7 +28,7 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Category is not a number")
     end
     it 'カテゴリー情報が1以外でないと登録できない' do
-      @item.category_id = '1'
+      @item.category_id = 1
       @item.valid?
       expect(@item.errors.full_messages).to include("Category must be other than 1")
     end
@@ -38,7 +38,7 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("State is not a number")
     end
     it '商品の状態が1以外でないと登録ができない' do
-      @item.state_id = '1'
+      @item.state_id = 1
       @item.valid?
       expect(@item.errors.full_messages).to include("State must be other than 1")
     end
@@ -48,7 +48,7 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Shipping is not a number")
     end
     it '発送料の負担が1以外でないと登録ができない' do
-      @item.shipping_id = '1'
+      @item.shipping_id = 1
       @item.valid?
       expect(@item.errors.full_messages).to include("Shipping must be other than 1")
     end
@@ -58,7 +58,7 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Area is not a number")
     end
     it '発送元の地域について1以外出ないと登録ができない' do
-      @item.area_id = '1'
+      @item.area_id = 1
       @item.valid?
       expect(@item.errors.full_messages).to include("Area must be other than 1")
     end
@@ -68,7 +68,7 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Day is not a number")
     end
     it '発送までの日数が1以外でないと登録ができない' do
-      @item.day_id = '1'
+      @item.day_id = 1
       @item.valid?
       expect(@item.errors.full_messages).to include("Day must be other than 1")
     end
@@ -80,7 +80,6 @@ RSpec.describe Item, type: :model do
     it '価格の範囲が¥300以下だと登録ができない' do
       @item.price = 200
       @item.valid?
-      binding.pry
       expect(@item.errors.full_messages).to include("Price must be greater than or equal to 300")
     end
     it '価格の範囲が¥9,999,999以上だと登録ができない' do
