@@ -30,9 +30,11 @@
     <%= link_to "削除", "#", method: :delete, class:"item-destroy" %>
 
     <%# 商品が売れていない場合はこちらを表示しましょう %>
-    <% else %>
+    <% if current_user.id == @item.user_id %>
+    <% else%>
     <% if '商品が購入済み' %>
     <%= link_to "購入画面に進む", "#" ,class:"item-red-btn"%>
+    <% end %>
     <% end %>
     <%# //商品が売れていない場合はこちらを表示しましょう %>
 
